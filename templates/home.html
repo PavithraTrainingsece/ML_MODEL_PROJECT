@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Welcome to the Personalized Learning Platform</h2>
+<p>This platform generates customized learning materials to help you study better.</p>
+
+<form action="{{ url_for('generate') }}" method="POST">
+    <label for="prompt">Enter your prompt:</label>
+    <textarea id="prompt" name="prompt" rows="4" required></textarea>
+    <button type="submit">Generate Text</button>
+</form>
+{% endblock %}

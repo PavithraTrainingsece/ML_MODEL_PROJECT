@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Features - Personalized Learning Platform</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Features of Our Personalized Learning Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('profile') }}">Create Profile</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('features') }}">Features</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Personalized Learning Experience</h2>
+            <p>Our platform tailors the learning experience for each student, adapting to their individual needs, learning styles, and pace. We leverage advanced algorithms to provide customized content that enhances student engagement and improves learning outcomes.</p>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Adaptive Learning Paths:</strong> Students receive a personalized curriculum that adapts based on their performance, ensuring they master each topic before moving on.</li>
+                <li><strong>Real-Time Progress Tracking:</strong> Monitor learning progress with interactive dashboards that provide insights into strengths, weaknesses, and areas for improvement.</li>
+                <li><strong>Interactive Learning Materials:</strong> Access to a rich library of multimedia content including videos, quizzes, and interactive exercises tailored to each subject.</li>
+                <li><strong>Collaboration Tools:</strong> Foster collaboration through discussion forums, group projects, and peer feedback to enhance learning through social interaction.</li>
+                <li><strong>Regular Assessments:</strong> Periodic quizzes and tests help reinforce knowledge and ensure that students are on track with their learning goals.</li>
+                <li><strong>Customizable Learning Environment:</strong> Students can personalize their learning space with themes, layouts, and settings that cater to their preferences.</li>
+                <li><strong>Support and Resources:</strong> Access to a range of resources including tutoring support, study guides, and online communities to assist with learning challenges.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Progress Tracking</h2>
+            <p>Our platform offers advanced progress tracking tools that allow students to visualize their learning journey. Key features of progress tracking include:</p>
+            <ul>
+                <li><strong>Visual Dashboards:</strong> Students can view their learning metrics in real time, showing progress on completed modules, quizzes, and assignments.</li>
+                <li><strong>Performance Analytics:</strong> In-depth analysis of strengths and weaknesses based on performance data to tailor future learning paths.</li>
+                <li><strong>Goal Setting:</strong> Students can set personal learning goals and track their progress towards achieving them.</li>
+                <li><strong>Feedback Mechanism:</strong> Instant feedback on assessments to help students understand areas needing improvement.</li>
+            </ul>
+            <p>With these tools, students can take control of their learning, ensuring they stay on track to achieve their academic goals.</p>
+
+            <!-- Bar Chart Section -->
+            <div class="progress-tracking">
+                <h2>Learning Progress Visualization</h2>
+                <canvas id="progressChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <section>
+            <h2>Benefits of Using Our Platform</h2>
+            <p>By utilizing our personalized learning platform, students can expect:</p>
+            <ul>
+                <li>Improved engagement and motivation to learn.</li>
+                <li>Increased retention of information through tailored content.</li>
+                <li>A supportive learning community that encourages collaboration.</li>
+                <li>Flexibility to learn at their own pace and convenience.</li>
+                <li>Better preparedness for assessments and real-world applications.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Personalized Learning Platform</p>
+    </footer>
+
+    <script>
+        // Sample data for the chart
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const progressChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Module 1', 'Module 2', 'Module 3', 'Module 4', 'Module 5'],
+                datasets: [{
+                    label: 'Progress (%)',
+                    data: [80, 90, 70, 85, 95], // Sample progress data
+                    backgroundColor: 'rgba(0, 191, 255, 0.5)',
+                    borderColor: 'rgba(0, 191, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100 // Set maximum value for percentage
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
